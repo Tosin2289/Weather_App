@@ -32,8 +32,8 @@ class LocationTile extends StatelessWidget {
               children: [
                 Image.asset(
                   icon,
-                  width: 50,
-                  height: 50,
+                  width: 40,
+                  height: 40,
                 ),
                 Text(
                   condition,
@@ -45,8 +45,8 @@ class LocationTile extends StatelessWidget {
               temperature,
               style: const TextStyle(
                   color: Colors.white,
-                  fontSize: 28,
-                  fontWeight: FontWeight.w700),
+                  fontSize: 30,
+                  fontWeight: FontWeight.w600),
             ),
           ],
         ),

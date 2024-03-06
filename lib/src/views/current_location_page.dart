@@ -1,9 +1,7 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-
 import 'package:intl/intl.dart';
 import 'package:weather_app/constant/image_string.dart';
 import 'package:weather_app/src/controller/weather_controller.dart';
@@ -38,10 +36,23 @@ class _CurrentLocationPageState extends State<CurrentLocationPage> {
     }
   }
 
+  final controllers = Get.put(WeatherController());
+  String? cityName;
+
+  _fetchWeather() async {
+    cityName = await controllers.getCurrentCity();
+  }
+
+  @override
+  void initState() {
+    _fetchWeather();
+    print(cityName);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    final controllers = Get.put(WeatherController());
-    var location = controllers.getWeather(controllers.getCurrentCity());
+    var location = controllers.getWeather(cityName);
     return Scaffold(
       backgroundColor: Colors.black,
       extendBodyBehindAppBar: true,

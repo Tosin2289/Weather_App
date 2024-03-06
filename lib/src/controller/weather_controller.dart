@@ -6,6 +6,7 @@ import 'package:weather_app/constant/consts.dart';
 
 class WeatherController extends GetxController {
   static WeatherController get instance => Get.find();
+
   static String apiKey = OpenWeatherApiKey;
 
   Future<Weather> getWeather(cityName) async {
@@ -24,13 +25,13 @@ class WeatherController extends GetxController {
     if (permission == LocationPermission.denied) {
       permission = await Geolocator.requestPermission();
     }
-    // fetch current location
+
     Position position = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.high);
-    //convert the position to a list of placemark
+
     List<Placemark> placmarks =
         await placemarkFromCoordinates(position.latitude, position.longitude);
-    //extract cityname from the first placemark
+
     String? cityname = placmarks[0].locality;
 
     return cityname ?? "";
@@ -40,12 +41,8 @@ class WeatherController extends GetxController {
     bool serviceEnabled;
     LocationPermission permission;
 
-    // Test if location services are enabled.
     serviceEnabled = await Geolocator.isLocationServiceEnabled();
     if (!serviceEnabled) {
-      // Location services are not enabled don't continue
-      // accessing the position and request users of the
-      // App to enable the location services.
       return Future.error('Location services are disabled.');
     }
 
