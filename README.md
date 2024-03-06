@@ -1,16 +1,24 @@
-# weather_app
+## weather_app
 
-A new Flutter project.
+A weather app made with flutter and getx as statemanagement.<br>
 
-## Getting Started
+The api for this app was gotten from openweathermap<br>
 
-This project is a starting point for a Flutter application.
+# packages used
+<ol>
+  <li>get :  for the statemagement</li>
+   <li>geocoding: for getting device location</li>
+   <li>geolocator: for getting device current location</li>
+   <li>intl: for datetime formatting</li>
+   <li>iconsax: for icon pack</li>
+   <li>weather: for access to the openweather api</li>
+</ol>
 
-A few resources to get you started if this is your first Flutter project:
+# App Demo
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+<img src='https://github.com/Tosin2289/Weather_App/assets/66890167/779ffa76-0fcb-4122-aa7b-831f509a0498' width='200'>
+<img src='https://github.com/Tosin2289/Weather_App/assets/66890167/3c9af267-74db-4d4b-872b-694167c89376' width='200'>
+<img src='https://github.com/Tosin2289/Weather_App/assets/66890167/615b839f-6f1c-498a-8939-47a6fd129039' width='200'>
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
